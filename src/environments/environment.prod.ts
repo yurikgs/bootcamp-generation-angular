@@ -1,7 +1,10 @@
 export const environment = {
   production: true,
-  token:'',
-  nome:'',
-  id:0,
-  foto:''
+   id:0,
+  // token:'',
+  // nome:'',
+  // foto:''
+  foto:'https://i.imgur.com/jx01Ii7.jpg',
+  nome:'Yuri Silva',
+  token:'l'
 };
