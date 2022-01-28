@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Tema } from '../model/Tema';
 import { AuthService } from '../service/auth.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-inicio',
@@ -10,9 +12,12 @@ import { AuthService } from '../service/auth.service';
 })
 export class InicioComponent implements OnInit {
 
+  listaTemas: Tema[]
+
   constructor(
     private auth: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private temaService: TemaService) { }
 
   ngOnInit(){
 
@@ -22,6 +27,11 @@ export class InicioComponent implements OnInit {
       alert('Sua sessão expirou, favor faça o login novamente')
       this.router.navigate(['/entrar'])
     }
-  }
 
+  }
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
 }
