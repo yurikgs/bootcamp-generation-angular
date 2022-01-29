@@ -34,6 +34,7 @@ export class PostagemEditComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ''){
+      alert('Sua sessão expirou, favor faça o login novamente')
       this.router.navigate(['/entrar'])
     }
 

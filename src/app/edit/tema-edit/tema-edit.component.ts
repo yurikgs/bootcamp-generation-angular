@@ -20,6 +20,7 @@ export class TemaEditComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == '') {
+      alert('Sua sessão expirou, favor faça o login novamente')
       this.router.navigate(['/entrar'])
     }
 
