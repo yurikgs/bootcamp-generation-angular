@@ -22,8 +22,6 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
 
-    console.log(environment.token)
-
     if(environment.token == ''){
       alert('Sua sessão expirou, favor faça o login novamente')
       this.router.navigate(['/entrar'])
