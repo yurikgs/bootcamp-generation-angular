@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -12,12 +12,12 @@ export class MenuComponent implements OnInit {
 
   nome = environment.nome
   foto = environment.foto
+  id = environment.id
 
-//  usar o código abaixo para testes
-  // nome = "Yuri Silva"
-  // foto = "https://i.imgur.com/jx01Ii7.jpg"
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router
+    ) { }
 
   ngOnInit(){
   }
